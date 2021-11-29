@@ -1,7 +1,7 @@
 /*
  * @Date: 2021-11-26 08:30:19
  * @LastEditors: youyi
- * @LastEditTime: 2021-11-26 17:34:30
+ * @LastEditTime: 2021-11-28 22:03:42
  */
 let arr = ['banana', 'orange', 'apple', 'orange', 'banana']
 // filter
@@ -51,7 +51,7 @@ let user = [
 function uniqueByKey(data, key){
     return [...new Map(
         data.map(e => [key(e),e])
-    )]
+    ).values()]
 }
 
 console.log(uniqueByKey(user, item => item.id));
