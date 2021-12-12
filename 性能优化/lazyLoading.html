@@ -1,0 +1,53 @@
+<!--
+ * @Date: 2021-12-12 21:54:31
+ * @LastEditors: youyi
+ * @LastEditTime: 2021-12-12 22:50:54
+-->
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>
+            img {
+                display: block;
+                width: 400px;
+                height: 400px;
+                margin-bottom: 50px;
+                <!-- margin-left: 1000px; -->
+            }
+        </title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+    </head>
+    <body>
+        <img src="./static/loading.gif" data-src="./static/IMG_1962.JPG" alt="">
+        <img src="./static/loading.gif" data-src="./static/IMG_1962.JPG" alt="">
+        <img src="./static/loading.gif" data-src="./static/IMG_1962.JPG" alt="">
+        <img src="./static/loading.gif" data-src="./static/IMG_1962.JPG" alt="">
+        <img src="./static/loading.gif" data-src="./static/IMG_2139.JPG" alt="">
+        <img src="./static/loading.gif" data-src="./static/IMG_2139.JPG" alt="">
+        <img src="./static/loading.gif" data-src="./static/IMG_2139.JPG" alt="">
+        <script>
+            let n = 0;
+            let num = $('img').length
+            let img = $('img')
+            lazyLoad()
+            window.onscroll = lazyLoad
+            function $(name){
+                return document.getElementsByTagName(name)
+            }
+            function lazyLoad(){
+                let viewHeight = document.documentElement.clientHeight; // 视口
+                // 滚动条滚动数据
+                let scrollTop = document.documentElement.scrollTop || document.body.scrollTop;
+                for(let i = n; i<num; i++){
+                    if(img[i].offsetTop < viewHeight + scrollTop){
+                        if(img[i].getAttribute("src") === './static/loading.gif'){
+                            img[i].src = img[i].getAttribute("data-src")
+                        }
+                        n = n + 1
+                    }
+                }
+            }
+        </script>
+    </body>
+</html>
