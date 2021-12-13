@@ -1,7 +1,10 @@
 /*
  * @Date: 2021-12-13 22:00:47
  * @LastEditors: youyi
- * @LastEditTime: 2021-12-13 22:51:41
+ * @LastEditTime: 2021-12-13 23:08:27
+ * ts是js的超集（拓展了接受，弥补了js弱类型且没有模块化的缺点）
+ * 让开发更加规范
+ *TS a.强类型（声明类型不可更改） b.开发大型项目 c.模块化（方便维护，高效开发）
  */
 // 强类型
 let flag: boolean = true
@@ -71,3 +74,9 @@ function test<T>(name:T):T {
 }
 
 test<number>(123)
+
+// 转化成js
+// tsc helloWorld.ts
+
+// 实时转化成js
+// tsc --init 然后打开tsconfig.json 找到outDir：‘./js’ 输出到目录
