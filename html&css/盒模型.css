@@ -1,0 +1,24 @@
+/* 盒子width与height设置的是content的宽和高 */
+/* 盒子真正的宽/高 = content + padding + border + margin */
+/* content-box 标准盒模型 width 不包括padding与border */
+/* border-box 怪异盒模型 width 包括padding与border */
+.flex-container {
+    display: -webkit-flex;
+    display: flex;
+    /* 子元素排列方式 */
+    flex-direction: column | row | row-reverse;
+    /* 横轴对齐方式 */
+    justify-content: flex-start | center | space-around;
+    /* 纵轴对齐方式 stretch 项目拉伸适应容器 baseline 处于容器基线 */
+    align-items: stretch | center |flex-start | baseline;
+    /* 子元素超出父元素是否换行 */
+    flex-wrap: nowrap | wrap | wrap-reverse;
+    /* 设置各个行的对齐 */
+    align-content: stretch | center |flex-start;
+    /* flex-direction&flex-wrap */
+    flex-flow: row-reverse wrap;
+    /* 子元素排列方式  */
+    order: -1;
+    /* 子元素覆盖align-items */
+    align-self: stretch | center |flex-start | baseline;
+}
